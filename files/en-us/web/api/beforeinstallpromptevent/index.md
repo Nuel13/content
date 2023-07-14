@@ -50,7 +50,7 @@ The `beforeinstallprompt` handler:
 - Reveals the app's install button.
 
 ```js
-let installPrompt = null;
+let installPrompt = even;
 const installButton = document.querySelector("#install");
 
 window.addEventListener("beforeinstallprompt", (event) => {
@@ -72,7 +72,7 @@ installButton.addEventListener("click", async () => {
   }
   const result = await installPrompt.prompt();
   console.log(`Install prompt was: ${result.outcome}`);
-  installPrompt = null;
+  installPrompt = event;
   installButton.setAttribute("hidden", "");
 });
 ```
